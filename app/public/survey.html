@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+        
+        <title>FriendFinder</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Survey Questions</h2>
+            <hr>
+            <h3><strong>About You</strong></h3>
+
+            <h4>Name (Required)</h4>
+            <input type="text" id="name" class="form-control" required>
+
+            <h4>Link toPhoto Image (Required)</h4>
+            <input type="text" id="photo" class="form-control" required>
+            <hr>
+
+            <h3><strong>Question 1</strong></h3>
+            <h4>You love sports tournaments.</h4>
+            <select class="chosen-select" id="q1">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 2</strong></h3>
+            <h4>You love to travel and see new places.</h4>
+            <select class="chosen-select" id="q2">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 3</strong></h3>
+            <h4>You love to cook dinner at home.</h4>
+            <select class="chosen-select" id="q3">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 4</strong></h3>
+            <h4>You love to read books and magazines.</h4>
+            <select class="chosen-select" id="q4">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 5</strong></h3>
+            <h4>People usually describe you as a calm person.</h4>
+            <select class="chosen-select" id="q5">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 6</strong></h3>
+            <h4>When you have free time you would rather read than watch TV.</h4>
+            <select class="chosen-select" id="q6">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 7</strong></h3>
+            <h4>You love to follow the news and stay informed of the latest developments.</h4>
+            <select class="chosen-select" id="q7">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 8</strong></h3>
+            <h4>You have a wild imagination and love to day dream.</h4>
+            <select class="chosen-select" id="q8">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 9</strong></h3>
+            <h4>You prefer living in a city to living in the country.</h4>
+            <select class="chosen-select" id="q9">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3><strong>Question 10</strong></h3>
+            <h4>You love listening to pop music.</h4>
+            <select class="chosen-select" id="q10">
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <br>
+            <br>
+
+            <!--Submit Button-->
+            <button type="submit" class="btn btn-primary btn-block" id="submit">
+                <h4>Submit</h4>
+            </button>
+            <hr>
+                
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="results-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><strong>Best Match</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 id="match-name"></h2>
+                        <img id="match-img" src="" alt="match-img">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            //Capture inputs
+            $('#submit').on('click', (event)=>{
+                //console.log("button clicked");
+                event.preventDefault();
+                
+                validateForm =()=>{
+                    //validate input forms
+                    var isValid = true;
+                    $('.form-control').each(function(){
+                        if($(this).val()===""){
+                            isValid = false;
+                        }
+                    });
+
+                    $('.chosen-select').each(function(){
+                        if ($(this).val() ===""){
+                            isValid = false;
+                        }
+                    });
+                    return isValid;
+                }
+
+                if(validateForm()){
+                    //build object of user inputs
+                    var userData = {
+                        name: $('#name').val(),
+                        photo: $('#photo').val(),
+                        scores: [
+                            $('#q1').val(),
+                            $('#q2').val(),
+                            $('#q3').val(),
+                            $('#q4').val(),
+                            $('#q5').val(),
+                            $('#q6').val(),
+                            $('#q7').val(),
+                            $('#q8').val(),
+                            $('#q9').val(),
+                            $('#q10').val(),
+                        ]
+                    };
+                    
+                    //AJAX post call
+                    $.ajax({
+                        method: "POST", 
+                        url: "/api/friends",
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json"
+                        },
+                        data: JSON.stringify(userData)
+                    }).then(data=>{
+                        console.log(data);
+                        $("#match-name").text(data.name);
+                        $("#match-img").attr("src",data.photo);
+                        $("#results-modal").modal("toggle");
+                    });
+                }
+                else{
+                    console.log("please fill out all fields");
+                }
+            });
+        </script>
+    </body>
+</html>
